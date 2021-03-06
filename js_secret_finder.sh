@@ -11,7 +11,7 @@ do
     filename=$(basename "$js_domain");
     
     #Fetch JS file locally
-    wget $js_domain;
+    wget $js_domain --no-check-certificate;
     
     #Extract filename without extension for foldername
     foldername="${filename%.*}";
@@ -35,7 +35,7 @@ do
             pattern=$(basename "$file" .json);
             
             #Excluding certain patterns which generate lot of noise. To be added as an optional parameterised input
-            if [ "$pattern" == ":" ]  || [ "$pattern" == "strings" ]; then
+            if [ "$pattern" == ":" ]  || [ "$pattern" == "strings" ] || [ "pattern" == "debug-pages" ]; then
                   continue;
             fi
             
