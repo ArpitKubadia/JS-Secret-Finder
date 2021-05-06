@@ -14,7 +14,7 @@ chmod +x js_secret_finder.sh
 ## Basic Usage
 Pass links to Javascript files from `STDIN`
 
-`waybackurls target | grep ".js" | ./js3_secret_finder.sh`
+`waybackurls target | grep ".js" | ./js_secret_finder.sh`
 
 Automatically uses wget to download all Javascript files, runs all the GF patterns you have in `~/.gf` and outputs to `gf_out.txt` and `cli`
 
